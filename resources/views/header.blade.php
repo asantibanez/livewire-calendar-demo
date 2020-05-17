@@ -47,6 +47,12 @@
                     <p class="text-xs">
                         {{ $event->notes }}
                     </p>
+                    <button
+                        wire:click.stop="deleteEvent({{ $event->id }})"
+                        type="button"
+                        class="mt-2 inline-flex items-center px-2 py-1 border border-transparent text-xs leading-4 font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-50 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo active:bg-indigo-200 transition ease-in-out duration-150">
+                        Delete
+                    </button>
                 </div>
             @endforeach
             @if($unscheduledEvents->isEmpty())

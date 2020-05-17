@@ -92,6 +92,12 @@ class AppointmentsCalendar extends LivewireCalendar
         $this->selectedAppointment = null;
     }
 
+    public function deleteEvent($eventId)
+    {
+        $appointment = Appointment::find($eventId);
+        $appointment->delete();
+    }
+
     public function render()
     {
         return parent::render()->with([
